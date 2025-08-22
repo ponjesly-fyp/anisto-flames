@@ -8,7 +8,7 @@ export async function POST(req: Request) {
         if (!name1 || !name2 || !result) {
             return new NextResponse("Missing data", { status: 400 });
         }
-        const collection = db.collection('flames')
+        const collection = await db.collection('flames')
         await collection.insertOne({
             name1,
             name2,

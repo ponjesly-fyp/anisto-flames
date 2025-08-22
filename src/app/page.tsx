@@ -60,7 +60,8 @@ export default function FlamesPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const count = computeRemainingCount(name1, name2);
-    setResult(flamesResult(count));
+    const newResult = flamesResult(count);
+    setResult(newResult);
     setIsPopupOpen(true);
     try {
       const response = await fetch('/api/submitData', {
@@ -69,9 +70,9 @@ export default function FlamesPage() {
         body: JSON.stringify({
           name1: name1,
           name2: name2,
-          result: result?.meaning
+          result: newResult.meaning
         })
-      })
+      });
       if (!response.ok) {
         console.error('Failed to submit data:', response.statusText);
       } else {
