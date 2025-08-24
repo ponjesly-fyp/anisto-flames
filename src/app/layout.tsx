@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Falames",
+  title: "Flames",
   description: "A playful compatibility game. Enter two names, and we'll compute the FLAMES result",
   icons: {
     icon: [
